@@ -1,0 +1,87 @@
+*{
+    margin: 0; padding: 0;  box-sizing: border-box;}
+    main{
+        min-height: 100vh;
+        display: flex; 
+        justify-content: center;
+         align-items: center; 
+         text-align: center;
+         background-color: #41315e;
+    }
+    .loader{
+        font-size: 1rem;
+    }
+    .loader--1, .loader--3 {
+        transform: scale(0.8);
+    }
+    .dot{
+        position: relative;
+        width: 10em;
+        height: 10em;
+        background-color: rgb(255,197,62);
+        z-index: 5;
+        border-radius: 50%;
+        overflow: hidden;
+        transform-origin: bottom;
+        animation: bounce  2s infinite ease-in-out;
+    }
+    .loader--2, .face{
+        animation: face   2s linear ease infinite;
+
+    }
+    .eyes{
+        position: absolute;
+        top: 3em;
+        left:3em;
+        background-color: rgb(42, 25, 15);
+        height: 1em;
+        width: 1.5em;
+        border-radius: 50%;
+        box-shadow: 3em 0 0 rgb(42, 25, 15);
+       
+    }
+    .mouth{
+        position: absolute;
+        background-color: rgb(42, 25, 15);
+        height: .5em;
+        width: 2em;
+        left: 4em;
+        top: 5em;
+        animation: mouth 2s ease infinite;
+    }
+    .shadow{
+        width: 10em;
+        height: 4em;
+        border-radius: 50%;
+        background-color: rgb(0, 0, 0, 0.322);
+        margin-top: -2em;
+        animation:shadow 3s ease delay infinite;
+    }
+    @keyframes bounce{
+        0%{  transform: scale(1.1) translateY(0);}
+        10%{ transform: scale(1.1, .9) translateY(0);}
+        50%{ transform: scale(.9,1.1)  translateY(-10em);}
+        100%{ transform: scale(1.1) translateY(0);}
+    }
+    @keyframes face{
+        0%{ transform: scaleY(1) translateY(0); opacity: 1;}
+        5%{ transform: scaleY(1) translateY(0); opacity: 1;}
+        15%{transform: scaleY(.8) translateY(-10em); opacity: 1;}
+        17%{transform: scaleY(.8) translateY(-10em); opacity: 0;}
+        22%{transform: scaleY(.8) translateY(10em); opacity: 0;}
+        25%{transform: scaleY(.8) translateY(10em); opacity: 1;}
+        50%{transform: scaleY(1) translateY(0); opacity: 1;}
+        100%{transform: scaleY(1) translateY(0); opacity: 1;}
+    }
+    @keyframes mouth{
+        0%{ border-radius: 0%; transform: scale(1.1);}
+        50%{border-radius:0% ; transform: scale(1.1);}
+        75%{border-radius:50% ; transform: scale(.9,2.5);}
+        100%{border-radius: 0%; transform: scale(1.1);}
+    }
+    @keyframes shadow {
+        0% { transform: scale(1,1) }
+        10% { transform: scale(1.1) }
+        50% { transform: scale(.8) }
+        100% { transform: scale(1,1) }
+    }
